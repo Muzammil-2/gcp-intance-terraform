@@ -9,9 +9,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project     = "ase2345"
+  project     = var.project
   credentials = file("serviceac.json")
-  region      = "var.region"
+  region      = var.region
 }
 
 /*terraform {

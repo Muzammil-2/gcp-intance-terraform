@@ -3,16 +3,16 @@
   display_name = "Custom SA for VM Instance"
 }
 */
-resource "google_compute_instance" "default" {
-  name         = "var.name"
-  machine_type = "var.machine_type"
-  zone         = "var.zone"
+resource "google_compute_instance" "instance" {
+  name         = var.instance
+  machine_type = var.machine_type
+  zone         = var.zone
 
-  tags = ["foo", "bar"]
+
 
   boot_disk {
     initialize_params {
-      image = "var.image"
+      image = var.image
       labels = {
         my_label = "value"
       }
