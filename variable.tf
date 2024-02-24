@@ -1,7 +1,7 @@
-variable "instance" {
-  type        = string
+variable "instance_name" {
+  type        = list(string)
   description = "name given to vm_instance"
-  default     = "terraform-instance"
+  default     = ["webapp","dbapp"]
 }
 
 variable "machine_type" {
@@ -9,7 +9,10 @@ variable "machine_type" {
   description = "configure machine size"
   default     = "e2-micro"
 }
-
+variable "node_count" {
+  type    = number
+  default = 2
+}
 variable "zone" {
   default = "asia-east1-a"
 }

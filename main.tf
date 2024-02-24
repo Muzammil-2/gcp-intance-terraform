@@ -4,10 +4,10 @@
 }
 */
 resource "google_compute_instance" "instance" {
-  name         = var.instance
   machine_type = var.machine_type
   zone         = var.zone
-
+  count        = var.node_count
+  name         = var.instance_name[count.index]
 
 
   boot_disk {
